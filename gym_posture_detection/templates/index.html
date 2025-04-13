@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Posture Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div style="display: flex; justify-content:center; align-items: center;">
+        <h1>Gym Posture Detection</h1>
+        <button class="contact" style="height: 25px;margin-left: 250px;border-radius: 10;">
+            contact us</button>
+    </div>
+    </header>
+
+    <section class="hero">
+        <!-- Card for Weightlifting -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/weightlifting.jpeg') }}" alt="Weightlifting">
+            <h2>Weightlifting</h2>
+            <a href="/exercise/weightlifting">Start</a>
+        </div>
+
+        <!-- Card for Arm Curl -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/armcurl.jpeg') }}" alt="Arm Curl">
+            <h2>Arm Curl</h2>
+            <a href="/exercise/armcurl">Start</a>
+        </div>
+
+        <!-- Card for Pushup -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/pushups.jpeg') }}" alt="Pushup">
+            <h2>Pushup</h2>
+            <a href="/exercise/pushups">Start</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="indiv">
+           <h1>Thanks for visiting..</h1>
+        </div>
+
+   
+       </footer>
+</body>
+</html>
