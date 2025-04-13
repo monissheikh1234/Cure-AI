@@ -5,3 +5,7 @@ CureAI is a cutting-edge healthcare platform designed to bridge the gap between 
 ## MediTrack
 One Stop Solution for all your medical records.
 
+
+
+https://github.com/user-attachments/assets/317e6407-df4a-404a-9a3d-6e6d75080c8e
+
