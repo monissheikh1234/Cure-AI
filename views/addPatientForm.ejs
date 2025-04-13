@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Patient</title>
+</head>
+<body>
+    <h1>Add New Patient</h1>
+    <form action="/add-patient" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="aadhar">Aadhar ID:</label>
+        <input type="text" id="aadhar" name="aadhar" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="blood_group">Blood Group:</label>
+        <input type="text" id="blood_group" name="blood_group"><br>
+
+        <label for="allergies">Allergies:</label>
+        <input type="text" id="allergies" name="allergies"><br>
+
+        <label for="emergency_name">Emergency Contact Name:</label>
+        <input type="text" id="emergency_name" name="emergency_name" required><br>
+
+        <label for="emergency_relation">Emergency Contact Relation:</label>
+        <input type="text" id="emergency_relation" name="emergency_relation" required><br>
+
+        <label for="emergency_contact">Emergency Contact Phone:</label>
+        <input type="text" id="emergency_contact" name="emergency_contact" required><br>
+
+        <button type="submit">Add Patient</button>
+    </form>
+</body>
+</html>

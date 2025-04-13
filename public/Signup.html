@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Sign Up</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>MediTrack</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="http://localhost:3000/" class="active">Home</a></li>
+            <li><a href="http://localhost:3000/aboutus">About Us</a></li>
+            <li><a href="http://localhost:3000/login">Login</a></li>
+            <li><a href="http://localhost:3000/signup/new">Sign Up</a></li>
+            <li><a href="http://localhost:3000/contactus">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <div class="form-container">
+            <h1>MediTrack Sign Up</h1>
+            <div class="toggle-container">
+                <button id="patientToggle" class="active">Patient</button>
+                <button id="doctorToggle">Doctor</button>
+            </div>
+            <form action="/signup" method="POST" id="signUpForm">
+                <input type="hidden" name="user_type" id="userType" value="patient">
+                <div id="patientFields" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                    <div class="input-group">
+                        <input type="text" data-name="p_full_name" id="patientName" required>
+                        <label for="patientName">Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" data-name="p_age" id="patientAge" required>
+                        <label for="patientAge">Age</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="patientGender" class="select-label">Gender</label>
+                        <select name="p_gender"id="patientGender" class="styled-select" required>
+                            <option value="Gender" disabled selected></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="aadhar_id" type="text" id="patientAadhar" required placeholder="Adhar number">
+                        <label for="patientAadhar">Aadhar Number</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_emergency_name" type="text" id="emergencyName" required placeholder="Emergency Contact Name">
+                        <label for="emergencyname">Emergency Contact Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_emergency_phone" type="tel" id="emergencyPhone" required>
+                        <label for="emergencyPhone">Emergency Phone No.</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_emergency_relationship" type="text" id="relationToPatient" required>
+                        <label for="relationToPatient">Relation to Patient</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_blood_group" type="text" id="bloodGroup" required>
+                        <label for="bloodGroup">Blood Group</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_allergies" type="text" id="allergies">
+                        <label for="allergies">Allergies (if any)</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_email" type="email" id="patientEmail" required>
+                        <label for="patientEmail">Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="p_password" type="password" id="patientPassword" required>
+                        <label for="patientPassword">Password</label>
+                    </div>
+                </div>
+                
+                <div id="doctorFields" style="display: none;">
+                    <div class="input-group">
+                        <input data-name="d_id" type="text" id="doctorId">
+                        <label for="doctorId">Doctor Registered Id</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="d_full_name" type="text" id="doctorName">
+                        <label for="doctorName">Doctor Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="hospital_name" type="text" id="hospitalInfo">
+                        <label for="hospitalInfo">Hospital Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="d_email" type="email" id="registeredDoctorEmail">
+                        <label for="registeredDoctorEmail">Doctor Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input data-name="d_password" type="password" id="registeredDoctorPassword">
+                        <label for="registeredDoctorPassword">Password</label>
+                    </div>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <form method="GET" action="/login">
+                <button>
+                    <div class="login-link">
+                        <p>Already have an account? <a>Log in here</a></p>
+                    </div>
+                </button>
+           </form>
+        </div>
+    </div>
+    <script src="/js/signup.js"></script>
+</body>
+</html>

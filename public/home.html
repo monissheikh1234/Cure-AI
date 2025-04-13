@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CureAI - Your Medical History, Anytime, Anywhere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/home.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">CureAI</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a id="exerciseLink" href="http://127.0.0.1:5000/">Exercise</a></li>
+
+        </ul>
+        <div class="auth-buttons">
+          
+            <form method="GET" action="/login">
+                <button class="login-btn">Login</button>
+            </form>
+            <form method="GET" action="/signup/new">
+                <button class="signup-btn">Sign Up</button>
+            </form>
+        </div>
+   
+
+      </nav>
+      <div class="exercise-btn-container">
+        <a href="http://127.0.0.1:5000/" class="exercise-btn">Smart AI Exercise</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Your Medical History, Anytime, Anywhere!</h1>
+          <p>Securely store, access, and manage your medical records with ease.</p>
+          <form action="/signup/new" method="GET">
+            <button class="cta-button">Get Started</button>
+          </form>
+        </div>
+        <div class="hero-image">
+          <img src="https://img.freepik.com/free-vector/doctor-examining-patient-flat-illustration_74855-14069.jpg" alt="Doctor reviewing digital medical records">
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="section-header">
+          <h2>About Our Platform</h2>
+        </div>
+        <div class="about-content">
+          <p>We provide a secure and efficient way for patients to store and access their medical history, ensuring hassle-free healthcare management.</p>
+          
+          <div class="key-features">
+            <div class="feature">
+              <i class="fas fa-notes-medical"></i>
+              <h3>Easy Record-Keeping</h3>
+              <p>Store all your medical records in one place</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <h3>Secure Cloud Storage</h3>
+              <p>Your data is encrypted and securely stored</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-file-prescription"></i>
+              <h3>Quick Access</h3>
+              <p>Access past prescriptions and reports instantly</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advantages Section -->
+      <section id="features" class="advantages">
+        <div class="section-header">
+          <h2>Why Choose Us?</h2>
+        </div>
+        <div class="advantages-cards">
+          <div class="advantage-card">
+            <i class="fas fa-hospital-user"></i>
+            <h3>Easy Access</h3>
+            <p>View medical records anytime, anywhere</p>
+          </div>
+          <div class="advantage-card">
+            <i class="fas fa-lock"></i>
+            <h3>Secure & Private</h3>
+            <p>HIPAA-compliant encryption</p>
+          </div>
+          <div class="advantage-card">
+            <i class="fas fa-clock"></i>
+            <h3>Time-Saving</h3>
+            <p>No need to carry paper reports</p>
+          </div>
+          <div class="advantage-card">
+            <i class="fas fa-user-md"></i>
+            <h3>Doctor Collaboration</h3>
+            <p>Share history with your doctor instantly</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials">
+        <div class="section-header">
+          <h2>What Our Users Say</h2>
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <div class="testimonial-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Raj Malhotra">
+            </div>
+            <div class="testimonial-content">
+              <p>"This platform has made it easier for me to track my patients' medical history seamlessly."</p>
+              <h4>Dr. Raj Malhotra</h4>
+              <span>Cardiologist</span>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Riya Sharma">
+            </div>
+            <div class="testimonial-content">
+              <p>"I no longer worry about missing past reports. Everything is saved digitally!"</p>
+              <h4>Riya Sharma</h4>
+              <span>User</span>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-image">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit Patel">
+            </div>
+            <div class="testimonial-content">
+              <p>"The interface is so intuitive. I can find all my medical history with just a few clicks."</p>
+              <h4>Amit Patel</h4>
+              <span>User</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is my data safe on this platform?</h3>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We use end-to-end encryption to protect your medical history. Your data is stored securely and is only accessible to you and those you choose to share it with.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I share my records with my doctor?</h3>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, you can easily share your medical records with your healthcare provider. Our platform allows you to generate secure links or PDFs that you can share with your doctors.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is this platform free to use?</h3>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>We offer both free and premium plans based on your storage needs. The free plan includes basic features, while the premium plan offers additional storage and advanced features.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I upload my medical records?</h3>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>You can upload your medical records by scanning them or taking photos. Our platform also supports direct uploads from your computer or mobile device.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>MediTrack</h3>
+          <p>Your medical history in one place</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <form><button>About Us</button></form>
+            <form><button>Contact Us</button></form>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>Email: info@meditrack.com</p>
+          <p>Phone: +91 123-4567-123</p>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MediTrack. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/home.js"></script>
+  </body>
+</html>

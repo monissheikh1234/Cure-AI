@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor's Dashboard</title>
+    <link rel="stylesheet" href="/css/doctorDashboard.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-heartbeat"></i>
+        <span>MediTrack</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="container">
+      <section class="doctor-profile">
+        <div class="profile-card">
+          <div class="profile-info">
+            <h2><%= doctorData.d_name %></h2>
+            <div class="contact-info">
+              <p>Doctor ID: <%= doctorData.d_id %></p>
+              <p>🏥 <%= doctorData.hospital_name %></p>
+              <p>📧 <%= doctorData.d_email %></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="patient-search">
+        <div class="search-container">
+          <input
+            type="text"
+            id="patientSearch"
+            placeholder="Search patients by Aadhar ID..."
+          />
+          <button onclick="searchPatients()">Search</button>
+        </div>
+        <div class="quick-actions">
+          <button onclick="showAddPatientForm()">Add New Patient</button>
+        </div>
+      </section>
+
+      <section class="patient-records">
+        <div class="patients-list">
+          <h2>Patient</h2>
+          <div id="patientsList" class="list-container">
+            <p>No patients found.</p>
+          </div>
+        </div>
+
+        <div class="medical-history" id="medicalHistory">
+          <h2>Patient Medical History</h2>
+          <div class="history-content">
+            <% if (selectedPatient) { %>
+              <div class="history-section">
+                <h3>Diagnosis History</h3>
+                <ul>
+                  <% selectedPatient.Diagnosis.forEach(d => { %>
+                    <li><strong><%= d.condition %></strong> (Date: <%= d.date %>, Doctor: <%= d.doctor %>) - <%= d.notes %></li>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="history-section">
+                <h3>Current Medications</h3>
+                <ul>
+                  <% selectedPatient.Current_Medication.forEach(med => { %>
+                    <li><strong><%= med.Name %></strong> - <%= med.Frequency %>, <%= med.Period %> (<%= med.Instruction %>)</li>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="history-section">
+                <h3>Past Medications</h3>
+                <ul>
+                  <% selectedPatient.Past_Medication.forEach(med => { %>
+                    <li><strong><%= med.Name %></strong> - <%= med.Period %></li>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="history-section">
+                <h3>Lab Results</h3>
+                <ul>
+                  <% selectedPatient.Lab_Results.forEach(lab => { %>
+                    <li><strong><%= lab.Type %></strong> (Date: <%= lab.Date %>) - Result: <%= lab.Result %></li>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="history-section">
+                <h3>Allergies & Conditions</h3>
+                <p><%= selectedPatient.Medical_Information.Allergies %></p>
+              </div>
+            <% } else { %>
+              <p>No patient selected.</p>
+            <% } %>
+          </div>
+          <!-- <form method="GET" action="/addmedication">
+            <button class="add-medication-btn">Add New Medication</button>
+          </form>   -->
+        </div>
+      </section>
+    </div>
+    <script src="/js/doctorDashboard.js"></script>
+  </body>
+</html>

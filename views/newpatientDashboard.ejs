@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="/css/patientDashboard.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>MediTrack</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="http://localhost:3000/" class="active">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Patient Dashboard</h1>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Personal Information -->
+            <section class="dashboard-card">
+                <h2>Personal Information</h2>
+                <div class="info-group">
+                    <div class="info-item">
+                        <label>Name:</label>
+                        <span id="patientName"><%= patient.name %></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Age:</label>
+                        <span id="patientAge"><%= patient.age %></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Gender:</label>
+                        <span id="patientGender"><%= patient.gender %></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Emergency Contact -->
+            <section class="dashboard-card">
+                <h2>Emergency Contact</h2>
+                <div class="info-group">
+                    <div class="info-item">
+                        <label>Name:</label>
+                        <span id="emergencyName"><%= patient.emergency_contact.name %></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Relationship:</label>
+                        <span id="emergencyRelation"><%= patient.emergency_contact.relationship %></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Phone:</label>
+                        <span id="emergencyPhone"><%= patient.emergency_contact.phone %></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medical Information -->
+            <section class="dashboard-card">
+                <h2>Medical Information</h2>
+                <div class="info-group">
+                    <div class="info-item">
+                        <label>Blood Group:</label>
+                        <span id="bloodGroup"><%= patient.blood_group %></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Allergies:</label>
+                        <div id="allergiesList" class="tags">
+                            <% if (patient.allergies && patient.allergies.length > 0) { %>
+                                <% patient.allergies.forEach(function(allergy) { %>
+                                    <span style="color: white" class="tag"><%= allergy %></span>
+                                <% }); %>
+                            <% } else { %>
+                                <span>No known allergies</span>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medical Records -->
+            <section class="dashboard-card full-width">
+                <h2>Medical Records</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="prescriptions">Prescriptions</button>
+                    <button class="tab-btn" data-tab="lab-results">Lab Results</button>
+                    <button class="tab-btn" data-tab="diagnosis">Diagnosis History</button>
+                    <button class="tab-btn" data-tab="aisuggestion">AI Suggestion</button>
+                </div>
+
+                <div class="tab-content active" id="prescriptions">
+                    <h3>Current Medications</h3>
+                    <ul class="medication-list" id="currentMeds">
+                        <% if (currentMedications && currentMedications.length > 0) { %>
+                            <% currentMedications.forEach(function(med) { %>
+                                <li>
+                                    <strong><%= med.name %></strong>
+                                    <p>Dosage: <%= med.dosage %></p>
+                                    <p>Frequency: <%= med.frequency %></p>
+                                </li>
+                            <% }); %>
+                        <% } else { %>
+                            <li>No current medications</li>
+                        <% } %>
+                    </ul>
+
+                    <h3>Past Medications</h3>
+                    <ul class="medication-list" id="pastMeds">
+                        <% if (pastMedications && pastMedications.length > 0) { %>
+                            <% pastMedications.forEach(function(med) { %>
+                                <li>
+                                    <strong><%= med.name %></strong>
+                                    <p>Period: <%= med.period %></p>
+                                </li>
+                            <% }); %>
+                        <% } else { %>
+                            <li>No past medications</li>
+                        <% } %>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="lab-results">
+                    <div class="lab-results-list" id="labResults">
+                        <% if (labResults && labResults.length > 0) { %>
+                            <% labResults.forEach(function(result) { %>
+                                <div class="lab-result-item">
+                                    <h4><%= result.testName %></h4>
+                                    <p>Date: <%= result.date %></p>
+                                    <p>Result: <%= result.value %> <%= result.unit %></p>
+                                    <p>Status: <%= result.status %></p>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <p>No lab results available</p>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="diagnosis">
+                    <div class="diagnosis-list" id="diagnosisList">
+                        <% if (diagnoses && diagnoses.length > 0) { %>
+                            <% diagnoses.forEach(function(diagnosis) { %>
+                                <div class="diagnosis-item">
+                                    <h4><%= diagnosis.condition %></h4>
+                                    <p>Diagnosed on: <%= diagnosis.date %></p>
+                                    <p>Doctor: <%= diagnosis.doctor %></p>
+                                    <p>Notes: <%= diagnosis.notes %></p>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <p>No diagnosis history available</p>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="tab-content" id="aisuggestion">
+                        <div>
+                            
+                            <button onclick="getAISuggestion('<%= patient.aadhar_id %>')" class="btn">
+                                <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+                                    <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+                                </svg>
+                                <span class="text">Get AI Suggestion</span>
+                            </button>
+                            <p id="ai-suggestion"></p>
+                        </div>
+                </div>
+            </section>
+
+            <!-- Document Upload -->
+            
+        </div>
+    </div>
+    <script src="/js/patientDashboard.js"></script>
+    <script>
+        async function getAISuggestion(aadharId) {
+            try {
+                const response = await fetch(`/get-ai-suggestion?aadharId=${aadharId}`);
+                const data = await response.json();
+
+                if (data.error) {
+                    document.getElementById("ai-suggestion").innerText = "Error: " + data.error;
+                } else {
+                    document.getElementById("ai-suggestion").innerText = data.suggestion;
+                }
+            } catch (error) {
+                document.getElementById("ai-suggestion").innerText = "Failed to fetch AI suggestion.";
+            }
+        }
+    </script>
+    
+</body>
+</html>
