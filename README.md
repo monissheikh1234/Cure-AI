@@ -9,3 +9,6 @@ One Stop Solution for all your medical records.
 
 https://github.com/user-attachments/assets/317e6407-df4a-404a-9a3d-6e6d75080c8e
 
+
+
+have a look on our project : https://cureai-juwu.onrender.com/
