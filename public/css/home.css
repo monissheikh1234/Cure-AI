@@ -1,20 +1,15 @@
-/* Base Styles */
-* {
+/* Base Reset */
+body, h1, h2, h3, p, ul, li, a, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Basic Layout */
 body {
-  background-color: #084a6d;
-  color: white;
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 /* Navbar */
@@ -22,333 +17,139 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  background-color: #063f5e;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 1rem 2rem;
+  background-color: #0ea5e9;
+  color: white;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #38bdf8;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
   list-style: none;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .nav-links li a {
-  font-weight: 600;
-  padding: 0.5rem 0.8rem;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-.nav-links li a:hover {
-  background-color: #0ea5e9;
-}
-
-/* Login/Signup Buttons */
-.auth-buttons {
-  display: flex;
-  gap: 0.7rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .auth-buttons button {
-  padding: 0.4rem 1rem;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
   border: none;
-  border-radius: 20px;
-  background-color: #38bdf8;
-  color: white;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.auth-buttons button:hover {
+.login-btn {
+  background-color: white;
+  color: #0ea5e9;
+}
+
+.signup-btn {
   background-color: #0ea5e9;
+  color: white;
+  border: 1px solid white;
 }
 
 /* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
+  padding: 3rem 2rem;
   align-items: center;
-  padding: 4rem 2rem;
-  flex-wrap: wrap;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-content .cta-button {
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  background-color: #38bdf8;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.hero-content .cta-button:hover {
-  background-color: #0ea5e9;
+  max-width: 50%;
 }
 
 .hero-image img {
-  max-width: 500px;
   width: 100%;
-  border-radius: 10px;
+  max-width: 500px;
 }
 
-/* Section Headers */
-.section-header {
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+.cta-button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.section-header h2 {
-  font-size: 2rem;
-  border-bottom: 2px solid #38bdf8;
-  display: inline-block;
-  padding-bottom: 0.3rem;
-}
-
-/* About Section */
-.about {
-  padding: 2rem;
-  text-align: center;
-}
-
-.key-features {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.feature {
-  flex: 1;
-  margin: 1rem;
-  padding: 1.5rem;
-  background-color: #0a5276;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-.feature i {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
-}
-
-/* Advantages Section */
-.advantages {
-  padding: 2rem;
-  background-color: #063f5e;
-}
-
-.advantages-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.advantage-card {
-  flex: 1;
-  margin: 1rem;
-  padding: 1.5rem;
-  background-color: #0a5276;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  max-width: 250px;
-  text-align: center;
-}
-
-.advantage-card:hover {
-  transform: translateY(-5px);
-}
-
-.advantage-card i {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: 2rem;
-  text-align: center;
-}
-
-.testimonial-container {
+/* Highlighted Exercise Section */
+.highlight-exercise {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.testimonial {
-  background-color: #0a5276;
-  padding: 1.5rem;
-  border-radius: 10px;
-  max-width: 300px;
-  transition: transform 0.3s ease;
-}
-
-.testimonial:hover {
-  transform: scale(1.03);
-}
-
-.testimonial img {
-  border-radius: 50%;
-  width: 60px;
-  margin-bottom: 1rem;
-}
-
-/* FAQ Section */
-.faq {
-  padding: 2rem;
-}
-
-.faq-container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.faq-item {
-  margin-bottom: 1rem;
-  background-color: #0a5276;
-  border-radius: 8px;
-  padding: 1rem;
-  cursor: pointer;
-}
-
-.faq-question h3 {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.faq-answer {
-  margin-top: 0.5rem;
-  display: none;
-}
-
-/* Footer */
-footer {
-  background-color: #063f5e;
-  color: white;
   padding: 2rem 1rem;
+  background: linear-gradient(to right, #0ea5e9, #38bdf8);
+  animation: pulseBg 8s infinite alternate;
 }
 
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
+.highlight-exercise-btn {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: white;
+  color: #0e7490;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  transition: all 0.3s ease;
+  animation: pulseGlow 2s infinite ease-in-out;
 }
 
-.footer-logo h3 {
-  color: #38bdf8;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links button {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.footer-contact p {
-  margin: 0.3rem 0;
-}
-
-.footer-social .social-icons a {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  color: #38bdf8;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* Smart Exercise Button */
-.exercise-btn-container {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-}
-
-.exercise-btn {
-  background-color: #38bdf8;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.exercise-btn:hover {
+.highlight-exercise-btn:hover {
   background-color: #0ea5e9;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  }
+}
+
+@keyframes pulseBg {
+  from {
+    background: linear-gradient(to right, #0ea5e9, #38bdf8);
+  }
+  to {
+    background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-  }
-
-  .key-features,
-  .advantages-cards,
-  .testimonial-container,
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .auth-buttons {
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .exercise-btn-container {
-    position: static;
     text-align: center;
-    margin-top: 1rem;
+  }
+
+  .hero-content, .hero-image {
+    max-width: 100%;
+  }
+
+  .highlight-exercise-btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
   }
 }
