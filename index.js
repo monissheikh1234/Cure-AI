@@ -8,11 +8,34 @@ const express = require('express');
     const { faker } = require("@faker-js/faker");
     require("dotenv").config();
     const axios = require("axios");
-    const port = 3000;
-    const GEMINI_URL = "URL";
+    const port = process.env.PORT || 3000;
+    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDgWtSDDRshXUebv_Cywrrz3e4wYQ6Id3Y";
+
+    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyDgWtSDDRshXUebv_Cywrrz3e4wYQ6Id3Y";
+    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
+
+    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-pro:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
+
+    const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
+
+    // Construct MongoDB Atlas URI from environment variables
+    const mongoUri = process.env.MONGODB_URI;
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+    if (!mongoUri) {
+        console.error("MONGODB_URI environment variable is not set!");
+        process.exit(1);
+    }
+
+    if (!GEMINI_API_KEY) {
+        console.error("GEMINI_API_KEY environment variable is not set!");
+        process.exit(1);
+    }
+
+    const GEMINI_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
     async function main() {
-        await mongoose.connect('mongodb://localhost:27017/healthcaredata');
+        await mongoose.connect(mongoUri);
     }
     main()
         .then(()=>{
