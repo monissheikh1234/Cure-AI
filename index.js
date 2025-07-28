@@ -9,6 +9,7 @@ const express = require('express');
     require("dotenv").config();
     const axios = require("axios");
     const port = process.env.PORT || 3000;
+
     // Construct MongoDB Atlas URI from environment variables
     const mongoUri = process.env.MONGODB_URI;
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
