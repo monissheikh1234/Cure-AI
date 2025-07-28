@@ -1,311 +1,354 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: "Segoe UI", sans-serif;
-    }
+body {
+  background-color: #084a6d;
+  color: white;
+  line-height: 1.6;
+}
 
-    body {
-      background: #fff;
-      color: #333;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #0c4a6e;
-      color: #fff;
-      animation: slideDown 0.7s ease-in-out;
-    }
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #063f5e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.2rem;
-    }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+.nav-links li a {
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
 
-    .nav-links a:hover {
-      color: #38bdf8;
-    }
+.nav-links li a:hover {
+  background-color: #0ea5e9;
+}
 
-    .auth-buttons button {
-      margin-left: 1rem;
-      padding: 0.4rem 1rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      background-color: #38bdf8;
-      color: white;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
+/* Login/Signup Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 0.7rem;
+}
 
-    .auth-buttons button:hover {
-      background-color: #0ea5e9;
-    }
+.auth-buttons button {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #38bdf8;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .exercise-btn-container {
-      text-align: center;
-      margin: 1rem 0;
-    }
+.auth-buttons button:hover {
+  background-color: #0ea5e9;
+}
 
-    .exercise-btn {
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
-      background-color: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
 
-    .exercise-btn:hover {
-      background-color: #0369a1;
-    }
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
 
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 3rem 2rem;
-      background: #e0f2fe;
-      animation: fadeIn 1s ease forwards;
-    }
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
 
-    .hero-content {
-      max-width: 50%;
-    }
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
 
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      animation: slideRight 1s ease forwards;
-    }
+.hero-content .cta-button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  background-color: #38bdf8;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
+.hero-content .cta-button:hover {
+  background-color: #0ea5e9;
+}
 
-    .cta-button {
-      padding: 0.7rem 1.5rem;
-      background: #0ea5e9;
-      border: none;
-      border-radius: 30px;
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.hero-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+}
 
-    .cta-button:hover {
-      background: #0284c7;
-    }
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
 
-    .hero-image img {
-      width: 400px;
-      border-radius: 12px;
-      animation: zoomIn 1.2s ease forwards;
-    }
+.section-header h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #38bdf8;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
 
-    .section-header {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 2rem;
-      color: #0c4a6e;
-      animation: fadeIn 1s ease;
-    }
+/* About Section */
+.about {
+  padding: 2rem;
+  text-align: center;
+}
 
-    .about,
-    .advantages,
-    .testimonials,
-    .faq {
-      padding: 2rem;
-      animation: fadeIn 1s ease;
-    }
+.key-features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
 
-    .key-features,
-    .advantages-cards,
-    .testimonial-container,
-    .faq-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
+.feature {
+  flex: 1;
+  margin: 1rem;
+  padding: 1.5rem;
+  background-color: #0a5276;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
 
-    .feature,
-    .advantage-card,
-    .testimonial,
-    .faq-item {
-      background: #f0f9ff;
-      padding: 1.2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      flex: 1 1 250px;
-      transition: transform 0.3s ease;
-    }
+.feature:hover {
+  transform: translateY(-5px);
+}
 
-    .feature:hover,
-    .advantage-card:hover,
-    .testimonial:hover,
-    .faq-item:hover {
-      transform: translateY(-5px);
-    }
+.feature i {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
 
-    .feature i,
-    .advantage-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #0ea5e9;
-    }
+/* Advantages Section */
+.advantages {
+  padding: 2rem;
+  background-color: #063f5e;
+}
 
-    .testimonial-image img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      margin-bottom: 0.5rem;
-    }
+.advantages-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: bold;
-      color: #0369a1;
-    }
+.advantage-card {
+  flex: 1;
+  margin: 1rem;
+  padding: 1.5rem;
+  background-color: #0a5276;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  max-width: 250px;
+  text-align: center;
+}
 
-    .faq-answer {
-      display: none;
-      padding-top: 0.5rem;
-      color: #333;
-    }
+.advantage-card:hover {
+  transform: translateY(-5px);
+}
 
-    .faq-item:hover .faq-answer {
-      display: block;
-    }
+.advantage-card i {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
 
-    footer {
-      background: #0c4a6e;
-      color: white;
-      padding: 2rem;
-      animation: fadeIn 1s ease;
-    }
+/* Testimonials */
+.testimonials {
+  padding: 2rem;
+  text-align: center;
+}
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
-    .footer-links button {
-      background: transparent;
-      border: none;
-      color: white;
-      cursor: pointer;
-      margin-top: 0.3rem;
-    }
+.testimonial {
+  background-color: #0a5276;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
 
-    .footer-social i {
-      font-size: 1.5rem;
-      margin-right: 0.8rem;
-      color: #bae6fd;
-      transition: color 0.3s;
-    }
+.testimonial:hover {
+  transform: scale(1.03);
+}
 
-    .footer-social i:hover {
-      color: #7dd3fc;
-    }
+.testimonial img {
+  border-radius: 50%;
+  width: 60px;
+  margin-bottom: 1rem;
+}
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 1rem;
-    }
+/* FAQ Section */
+.faq {
+  padding: 2rem;
+}
 
-    /* Animations */
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+.faq-item {
+  margin-bottom: 1rem;
+  background-color: #0a5276;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+}
 
-    @keyframes slideRight {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+.faq-question h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+.faq-answer {
+  margin-top: 0.5rem;
+  display: none;
+}
 
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
+/* Footer */
+footer {
+  background-color: #063f5e;
+  color: white;
+  padding: 2rem 1rem;
+}
 
-      .hero-content,
-      .hero-image {
-        max-width: 100%;
-      }
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+.footer-logo h3 {
+  color: #38bdf8;
+}
 
-      .auth-buttons {
-        margin-top: 1rem;
-      }
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
 
-      .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-  
+.footer-links button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.footer-contact p {
+  margin: 0.3rem 0;
+}
+
+.footer-social .social-icons a {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Smart Exercise Button */
+.exercise-btn-container {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.exercise-btn {
+  background-color: #38bdf8;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.exercise-btn:hover {
+  background-color: #0ea5e9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .key-features,
+  .advantages-cards,
+  .testimonial-container,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .exercise-btn-container {
+    position: static;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
