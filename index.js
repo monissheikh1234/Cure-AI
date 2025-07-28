@@ -9,15 +9,6 @@ const express = require('express');
     require("dotenv").config();
     const axios = require("axios");
     const port = process.env.PORT || 3000;
-    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDgWtSDDRshXUebv_Cywrrz3e4wYQ6Id3Y";
-
-    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyDgWtSDDRshXUebv_Cywrrz3e4wYQ6Id3Y";
-    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
-
-    // const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-pro:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
-
-    const GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyBpZbRpB-poAg0qcWLVK-ePv_oZAEQmbJU";
-
     // Construct MongoDB Atlas URI from environment variables
     const mongoUri = process.env.MONGODB_URI;
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
