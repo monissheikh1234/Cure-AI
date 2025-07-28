@@ -39,8 +39,17 @@ nav {
   font-weight: 500;
 }
 
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.auth-buttons form {
+  margin: 0;
+}
+
 .auth-buttons button {
-  margin-left: 0.5rem;
   padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 5px;
@@ -62,17 +71,35 @@ nav {
 .hero {
   display: flex;
   justify-content: space-between;
-  padding: 3rem 2rem;
   align-items: center;
+  padding: 3rem 5%;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .hero-content {
-  max-width: 50%;
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
 }
 
 .hero-image img {
-  width: 100%;
-  max-width: 500px;
+  max-width: 100%;
+  height: auto;
 }
 
 .cta-button {
@@ -328,13 +355,23 @@ footer {
   .nav-links {
     display: none;
   }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content, .hero-image {
+    max-width: 100%;
+  }
+
+  .highlight-exercise-btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
 }
 
-
-
-
-
-
+/* Animations */
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
@@ -353,22 +390,5 @@ footer {
   }
   to {
     background: linear-gradient(to right, #38bdf8, #0ea5e9);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-content, .hero-image {
-    max-width: 100%;
-  }
-
-  .highlight-exercise-btn {
-    font-size: 1.1rem;
-    padding: 0.6rem 1.5rem;
   }
 }
